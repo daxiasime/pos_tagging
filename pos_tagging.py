@@ -6,7 +6,7 @@ tag2id,id2tag={},{}
 #用于将单词word转化为id 方便在矩阵中使用id 代替word的值
 word2id,id2word={},{}
 #文件的位置要根据实际情况自己调整。
-with open('corpurs/traindata.txt','r') as f:
+with open('traindata.txt','r') as f:
 	for x in f:
 		l=x.split('/')
 		word=l[0]
@@ -29,7 +29,7 @@ pi = np.zeros(N)# 每个词性出现在句首的概率
 A  = np.zeros((N,M))#给定tag i 出现该单词的概率 p(word|tag)
 B  = np.zeros((N,N))#状态转化矩阵 
 
-with open('corpurs/traindata.txt','r') as f:
+with open('traindata.txt','r') as f:
 	prev_tag="."
 	for x in f:
 		l=x.split('/')
